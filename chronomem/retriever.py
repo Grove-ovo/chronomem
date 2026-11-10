@@ -258,6 +258,8 @@ class Retriever:
         *,
         namespace: Optional[str] = None,
         top_k: Optional[int] = None,
+        entity: Optional[str] = None,
+        slot: Optional[str] = None,
     ) -> RetrievalResult:
         """Exact world-state snapshot at historical ``turn_id``."""
         ns = namespace if namespace is not None else "default"
@@ -292,6 +294,12 @@ class Retriever:
             if key_bonus:
                 reasons += ("key_match",)
                 score += key_bonus
+            if entity is not None and atom.entity == entity:
+                score += 0.8
+                reasons += ("entity_match",)
+            if slot is not None and atom.slot == slot:
+                score += 0.8
+                reasons += ("slot_match",)
             if score > 0.0:
                 scored.append(ScoredAtom(atom, score, reasons + ("as_of",)))
         scored.sort(key=lambda s: s.score, reverse=True)

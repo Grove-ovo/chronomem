@@ -82,10 +82,10 @@ def compute_symbol_fingerprint(path: Path, qualname: str) -> Optional[str]:
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()
 
 
-def compute_anchor_fingerprint(workspace_root: Path, anchor_path: str) -> Optional[str]:
+def compute_anchor_fingerprint(workspace_root, anchor_path: str) -> Optional[str]:
     """Fingerprint for an anchor spec: file hash, or AST symbol segment hash."""
     rel, qualname = parse_anchor(anchor_path)
-    path = workspace_root / rel
+    path = Path(workspace_root) / rel
     if not path.is_file():
         return None
     if qualname is None:
