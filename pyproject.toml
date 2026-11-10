@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chronomem"
+version = "0.1.0"
+description = "Anti-stale-poisoning AI long-term memory engine with MVCC state chains, 4-state conflict resolution, and code-anchor fingerprinting (ChronoBench-100 included)"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = []
+
+[project.scripts]
+chronomem = "chronomem.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["chronomem*", "benchmarks*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
