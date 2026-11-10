@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-11-10 17:01 UTC",
+  "dataset": {
+    "samples": 100,
+    "queries": 160,
+    "by_category": {
+      "reversal": 20,
+      "partial_update": 20,
+      "retraction": 20,
+      "as_of": 20,
+      "anchor_drift": 20
+    }
+  },
+  "metrics": {
+    "ChronoMem": {
+      "Temporal_State_Acc": 1.0,
+      "Stale_Poisoning_Rate": 0.0,
+      "Slot_Merge_F1": 1.0,
+      "Abstention_Acc": 1.0,
+      "Abstention_Acc_lenient": 1.0,
+      "False_Abstention_Rate": 0.0,
+      "As_Of_Acc": 1.0,
+      "Avg_Context_Tokens_Per_Query": 13.0625,
+      "n_queries": 160,
+      "n_poisoned_items": 0,
+      "n_context_items": 120
+    },
+    "Full-Context": {
+      "Temporal_State_Acc": 1.0,
+      "Stale_Poisoning_Rate": 0.5847457627118644,
+      "Slot_Merge_F1": 1.0,
+      "Abstention_Acc": 0.6666666666666666,
+      "Abstention_Acc_lenient": 0.6666666666666666,
+      "False_Abstention_Rate": 0.0,
+      "As_Of_Acc": 1.0,
+      "Avg_Context_Tokens_Per_Query": 47.35,
+      "n_queries": 160,
+      "n_poisoned_items": 138,
+      "n_context_items": 236
+    },
+    "Naive Vector RAG": {
+      "Temporal_State_Acc": 0.1,
+      "Stale_Poisoning_Rate": 0.5857142857142857,
+      "Slot_Merge_F1": 0.36333333333333334,
+      "Abstention_Acc": 0.0,
+      "Abstention_Acc_lenient": 0.0,
+      "False_Abstention_Rate": 0.0,
+      "As_Of_Acc": 0.5,
+      "Avg_Context_Tokens_Per_Query": 76.36875,
+      "n_queries": 160,
+      "n_poisoned_items": 164,
+      "n_context_items": 280
+    },
+    "Rolling Summary": {
+      "Temporal_State_Acc": 1.0,
+      "Stale_Poisoning_Rate": 0.5644444444444444,
+      "Slot_Merge_F1": 0.913888888888889,
+      "Abstention_Acc": 0.6666666666666666,
+      "Abstention_Acc_lenient": 0.6666666666666666,
+      "False_Abstention_Rate": 0.0,
+      "As_Of_Acc": 0.0,
+      "Avg_Context_Tokens_Per_Query": 43.46875,
+      "n_queries": 160,
+      "n_poisoned_items": 127,
+      "n_context_items": 225
+    }
+  },
+  "per_category": {
+    "reversal": {
+      "ChronoMem": {
+        "Accuracy": 1.0
+      },
+      "Full-Context": {
+        "Accuracy": 1.0
+      },
+      "Naive Vector RAG": {
+        "Accuracy": 0.1
+      },
+      "Rolling Summary": {
+        "Accuracy": 1.0
+      }
+    },
+    "partial_update": {
+      "ChronoMem": {
+        "Slot_Merge_F1": 1.0
+      },
+      "Full-Context": {
+        "Slot_Merge_F1": 1.0
+      },
+      "Naive Vector RAG": {
+        "Slot_Merge_F1": 0.36333333333333334
+      },
+      "Rolling Summary": {
+        "Slot_Merge_F1": 0.913888888888889
+      }
+    },
+    "retraction": {
+      "ChronoMem": {
+        "Accuracy": 1.0
+      },
+      "Full-Context": {
+        "Accuracy": 1.0
+      },
+      "Naive Vector RAG": {
+        "Accuracy": 0.0
+      },
+      "Rolling Summary": {
+        "Accuracy": 1.0
+      }
+    },
+    "as_of": {
+      "ChronoMem": {
+        "As_Of_Acc": 1.0
+      },
+      "Full-Context": {
+        "As_Of_Acc": 1.0
+      },
+      "Naive Vector RAG": {
+        "As_Of_Acc": 0.5
+      },
+      "Rolling Summary": {
+        "As_Of_Acc": 0.0
+      }
+    },
+    "anchor_drift": {
+      "ChronoMem": {
+        "Abstention_Acc": 1.0
+      },
+      "Full-Context": {
+        "Abstention_Acc": 0.5
+      },
+      "Naive Vector RAG": {
+        "Abstention_Acc": 0.5
+      },
+      "Rolling Summary": {
+        "Abstention_Acc": 0.5
+      }
+    }
+  }
+}
