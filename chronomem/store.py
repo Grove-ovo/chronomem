@@ -413,6 +413,14 @@ class MemoryStore:
         with self._lock:
             return int(self._conn.execute("SELECT COUNT(*) FROM memory_atoms").fetchone()[0])
 
+    def max_turn(self) -> int:
+        """Highest turn id ever written (0 for an empty store)."""
+        with self._lock:
+            val = self._conn.execute(
+                "SELECT MAX(valid_from_turn) FROM memory_atoms"
+            ).fetchone()[0]
+        return int(val) if val is not None else 0
+
     # ------------------------------------------------------------------ #
     # invariant & chain verification
     # ------------------------------------------------------------------ #
